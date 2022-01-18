@@ -6,7 +6,7 @@ int search(int arr[], int n, int x)
     for (int i = 0; i < n; i++)
         if (arr[i] == x)
             return i;
-    return -1;
+    return 0;
 }
 
 // Driver code
@@ -17,7 +17,7 @@ int main(void)
     int n = sizeof(arr) / sizeof(arr[0]);
 
     int result = search(arr, n, x);
-    (result == -1)
+    (result == 0)
         ? cout << "Element is not present in array"
         : cout << "Element is present at index " << result;
     return 0;

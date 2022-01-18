@@ -5,15 +5,18 @@ int binarySearch(int arr[], int l, int r, int x)
 {
     while (l <= r)
     {
-        int m = (l + r) / 2;
-        if (arr[m] == x)
-            return m;
-        if (arr[m] < x)
-            l = m + 1;
+        int mid = (l + r) / 2;
+        if (arr[mid] == x)
+            return mid;
         else
-            r = m - 1;
+        {
+            if (arr[mid] < x)
+                l = mid + 1;
+            else
+                r = mid - 1;
+        }
     }
-    return -1;
+    return 0;
 }
 
 int main()
@@ -22,7 +25,7 @@ int main()
     int x = 10;
     int n = sizeof(arr) / sizeof(arr[0]);
     int result = binarySearch(arr, 0, n - 1, x);
-    (result == -1) ? cout << "Element is not present in array"
-                   : cout << "Element is present at index " << result;
+    (result == 0) ? cout << "Element is not present in array"
+                  : cout << "Element is present at index " << result;
     return 0;
 }
