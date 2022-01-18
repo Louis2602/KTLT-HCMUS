@@ -2,47 +2,30 @@
 #include <algorithm>
 using namespace std;
 
-void min_max(int n, int arr[])
-{
-    if (n < 1)
-    {
-        cout << "None";
-        return;
-    }
-    int tmin = arr[0];
-    int tmax = arr[0];
-
-    int i = 1;
-    int a, b;
-    int x, y;
-    while (i < n)
-    {
-        a = arr[i];
-        if (i + 1 < n)
-            b = arr[i + 1];
-        else
-            a;
-        if (a <= b)
-        {
-            x = a;
-            y = b;
-        }
-        else
-        {
-            x = b;
-            y = a;
-        }
-        tmin = min(x, tmin);
-        tmax = max(y, tmax);
-        i += 2;
-    }
-    cout << "Min = " << tmin << " Max = " << tmax << '\n';
-}
-
 int main()
 {
-    int arr[] = {3, 2, 5, 6, 1, 9, 7, 13, 4};
-    int n = sizeof(arr) / sizeof(arr[0]);
-    min_max(n, arr);
+    int a[] = {6, 4, 8, 0, 2, 11, 8, 1, 9, 3, 5};
+    int n = sizeof(a) / sizeof(a[0]);
+
+    int prev_min = a[0], prev_max = a[0];
+    int curr_min, curr_max;
+    for (int i = 0; i < n - 1; i += 2)
+    {
+        if (a[i] < a[i + 1])
+        {
+            curr_min = a[i];
+            curr_max = a[i + 1];
+        }
+        else
+        {
+            curr_min = a[i + 1];
+            curr_max = a[i];
+        }
+        curr_min = min(curr_min, prev_min);
+        curr_max = max(curr_max, prev_max);
+        prev_min = curr_min;
+        prev_max = curr_max;
+    }
+    cout << "Max = " << curr_max << " and Min = " << curr_min << '\n';
     return 0;
 }
