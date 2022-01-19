@@ -7,6 +7,8 @@ int main()
     int n = sizeof(a) / sizeof(a[0]);
 
     int minIndex, minValue;
+
+    // compare to the current min value and then swap if condition is true
     for (int i = 0; i < n - 1; ++i)
     {
         minIndex = i;

@@ -1,9 +1,11 @@
+// thuat toan sap xep chen
 #include <iostream>
 using namespace std;
 
 void insertionSort(int arr[], int n)
 {
     int i, key, j;
+    // neu co 1 phan tu thi khong can sap xep, vi vay ta chay i tu 1
     for (i = 1; i < n; i++)
     {
         key = arr[i];
@@ -11,7 +13,7 @@ void insertionSort(int arr[], int n)
         while (j >= 0 && arr[j] > key)
         {
             arr[j + 1] = arr[j];
-            j = j - 1;
+            j--;
         }
         arr[j + 1] = key;
     }
