@@ -6,23 +6,16 @@ int main()
     int a[] = {3, 2, 5, 1, 6, 4, 9, 7, 11};
     int n = sizeof(a) / sizeof(a[0]);
 
-    int minIndex, minValue;
+    int minIndex;
 
-    // compare to the current min value and then swap if condition is true
+    // compare the current min value with a[i] and then swap if condition is true
     for (int i = 0; i < n - 1; ++i)
     {
         minIndex = i;
-        minValue = a[i];
         for (int j = i + 1; j < n; ++j)
-        {
-            if (a[j] < minValue)
-            {
+            if (a[j] < a[minIndex])
                 minIndex = j;
-                minValue = a[j];
-            }
-        }
-        a[minIndex] = a[i];
-        a[i] = minValue;
+        swap(a[minIndex], a[i]);
     }
 
     // output
