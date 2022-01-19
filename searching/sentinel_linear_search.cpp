@@ -3,7 +3,7 @@ using namespace std;
 
 bool search(int a[], int k, int n)
 {
-    a[n] = k;
+    a[n] = k; // we need a sentinel to break the loop
     int i = 0;
     while (a[i] != k)
         i++;
