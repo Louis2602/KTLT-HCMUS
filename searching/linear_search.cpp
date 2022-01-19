@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 int search(int arr[], int n, int x)
@@ -8,9 +9,7 @@ int search(int arr[], int n, int x)
             return i;
     return 0;
 }
-
-// Driver code
-int main(void)
+int main()
 {
     int arr[] = {2, 3, 4, 10, 40};
     int x = 10;
