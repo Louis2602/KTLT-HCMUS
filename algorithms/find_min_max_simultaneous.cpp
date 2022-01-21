@@ -7,25 +7,22 @@ int main()
     int a[] = {6, 4, 8, 0, 2, 11, 8, 1, 9, 3, 5};
     int n = sizeof(a) / sizeof(a[0]);
 
-    int prev_min = a[0], prev_max = a[0];
-    int curr_min, curr_max;
-    for (int i = 0; i < n - 1; i += 2)
+    int minV, maxV;
+    minV = min(a[0], a[1]);
+    maxV = max(a[0], a[1]);
+    for (int i = 2; i < n; i += 2)
     {
-        if (a[i] < a[i + 1])
+        if (a[i] > a[i + 1])
         {
-            curr_min = a[i];
-            curr_max = a[i + 1];
+            minV = min(a[i + 1], minV);
+            maxV = max(a[i], maxV);
         }
         else
         {
-            curr_min = a[i + 1];
-            curr_max = a[i];
+            minV = min(a[i], minV);
+            maxV = max(a[i + 1], maxV);
         }
-        curr_min = min(curr_min, prev_min);
-        curr_max = max(curr_max, prev_max);
-        prev_min = curr_min;
-        prev_max = curr_max;
     }
-    cout << "Max = " << curr_max << " and Min = " << curr_min << '\n';
+    cout << "Max = " << maxV << " and Min = " << minV << '\n';
     return 0;
 }
