@@ -40,7 +40,7 @@ void insertionSort_sentinel(int arr[], int n)
 }
 int binarySearch(int arr[], int val, int l, int r)
 {
-    // using binary search to find the min value in the array
+    // using binary search to find the min value in the left-half array from 0 to j
     int mid;
     while (l <= r)
     {
