@@ -25,7 +25,8 @@ void insertionSort_sentinel(int arr[], int n)
     // neu co 1 phan tu thi khong can sap xep, vi vay ta chay i tu 1
     // our sentinel will be placed at the prev position of the first index and its value is smaller than the smallest value in the array
     // or we could say, our sentinel will be negative infinity
-    arr[-1] = -numeric_limits<int>::infinity();
+    // arr[-1] = -numeric_limits<int>::infinity();
+    arr[-1] = -1e7;
     for (int i = 1; i < n; i++)
     {
         int key = arr[i];
@@ -89,8 +90,8 @@ int main()
     int n = sizeof(arr) / sizeof(arr[0]);
 
     // insertionSort(arr, n);
-    // insertionSort_sentinel(arr, n);
-    insertionSort_binary_search(arr, n);
+    insertionSort_sentinel(arr, n);
+    // insertionSort_binary_search(arr, n);
     printArray(arr, n);
 
     return 0;
