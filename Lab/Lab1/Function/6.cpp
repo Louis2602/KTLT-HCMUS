@@ -1,21 +1,22 @@
 #include <iostream>
 using namespace std;
 
-int sumDigits(int n)
+int countInteger(int N, int k)
 {
-    int s = 0;
-    while (n > 0)
+    int cnt = 0;
+    for (int i = 0; i < N; i++)
     {
-        s += n % 10;
-        n /= 10;
+        if (i % k == 0)
+            cnt++;
     }
-    return s;
+    return cnt;
 }
 int main()
 {
-    int n;
-    cin >> n;
-    int ans = sumDigits(n);
-    cout << "Sum of digits: " << ans << endl;
+    int N, k;
+    cin >> N;
+    k = 3;
+    int ans = countInteger(N, k);
+    cout << "Number of integer that is smaller than " << N << " and divisible by " << k << " is: " << ans << endl;
     return 0;
 }
