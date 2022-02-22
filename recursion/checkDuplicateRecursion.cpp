@@ -7,7 +7,7 @@ bool checkDuplicate(int *a, int size)
         return true;
     if (checkDuplicate(a, size - 1))
     {
-        for (int i = 1; i < size; i++)
+        for (int i = 0; i < size; i++)
         {
             if (a[i] == a[size])
                 return false;
