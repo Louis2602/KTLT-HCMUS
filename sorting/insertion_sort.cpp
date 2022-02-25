@@ -39,6 +39,36 @@ void insertionSort_sentinel(int arr[], int n)
         arr[j + 1] = key;
     }
 }
+void insertionSort_sentinel_2(int arr[], int n)
+{
+    int j;
+    // neu co 1 phan tu thi khong can sap xep, vi vay ta chay i tu 1
+    // our sentinel will be placed at the prev position of the first index and its value is smaller than the smallest value in the array
+    // or we could say, our sentinel will be negative infinity
+    // arr[-1] = -numeric_limits<int>::infinity();
+    int temp = arr[0];
+    arr[0] = -100;
+    for (int i = 1; i < n; i++)
+    {
+        int key = arr[i];
+        j = i - 1;
+        while (key < arr[j])
+        {
+            arr[j + 1] = arr[j];
+            j--;
+        }
+        arr[j + 1] = key;
+    }
+    for (int i = 0; i < n; i++)
+        cout << arr[i] << " ";
+    j = 1;
+    while (arr[j] < temp && j < n)
+    {
+        arr[j - 1] = arr[j];
+        j++;
+    }
+    arr[j - 1] = temp;
+}
 int binarySearch(int arr[], int val, int l, int r)
 {
     // using binary search to find the min value in the left-half array from 0 to j
@@ -86,7 +116,7 @@ void printArray(int arr[], int n)
 
 int main()
 {
-    int arr[] = {1, 3, 7, 4, 6, 2, 5};
+    int arr[] = {6, 3, 8, 4, 7, 2, 5};
     int n = sizeof(arr) / sizeof(arr[0]);
 
     // insertionSort(arr, n);
