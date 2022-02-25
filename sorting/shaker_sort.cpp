@@ -32,6 +32,21 @@ void shakerSort(int a[], int n)
         l = mark;
     }
 }
+void shakerSort_2(int a[], int n)
+{
+    int l = 0, r = n - 1;
+    for (int i = l; i < r; i++)
+    {
+        for (int j = r; j > l; j--)
+            if (a[j] < a[j - 1])
+                swap(a[j], a[j - 1]);
+        l++;
+        for (int j = l; j < r; j++)
+            if (a[j] > a[j + 1])
+                swap(a[j], a[j + 1]);
+        r--;
+    }
+}
 void print(int a[], int n)
 {
     for (int i = 0; i < n; i++)
@@ -41,7 +56,7 @@ int main()
 {
     int a[] = {9, 8, 7, 5, 3, 6, 1};
     int n = 7;
-    shakerSort(a, n);
+    shakerSort_2(a, n);
     print(a, n);
     return 0;
 }

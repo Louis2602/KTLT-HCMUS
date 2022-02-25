@@ -108,6 +108,31 @@ void insertionSort_binary_search(int arr[], int n)
         arr[j + 1] = val;
     }
 }
+void binaryInsertionSort_2(int a[], int n)
+{
+    int l, r, mid;
+    for (int i = 1; i < n; i++)
+    {
+        int key = a[i];
+        l = 0;
+        r = i - 1;
+        while (l <= r)
+        {
+            mid = (l + r) / 2;
+            if (key < a[mid] && key > a[mid] - 1)
+            {
+                for (int j = i; j > mid; j--)
+                    a[j] = a[j - 1];
+                a[mid] = key;
+            }
+            if (key > a[mid])
+                l = mid + 1;
+            if (key < a[mid - 1])
+                r = mid - 1;
+        }
+        a[i + 1] = key;
+    }
+}
 void printArray(int arr[], int n)
 {
     for (int i = 0; i < n; i++)
@@ -120,8 +145,9 @@ int main()
     int n = sizeof(arr) / sizeof(arr[0]);
 
     // insertionSort(arr, n);
-    insertionSort_sentinel(arr, n);
+    // insertionSort_sentinel(arr, n);
     // insertionSort_binary_search(arr, n);
+    binaryInsertionSort_2(arr, n);
     printArray(arr, n);
 
     return 0;
