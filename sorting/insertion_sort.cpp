@@ -119,18 +119,14 @@ void binaryInsertionSort_2(int a[], int n)
         while (l <= r)
         {
             mid = (l + r) / 2;
-            if (key < a[mid] && key > a[mid] - 1)
-            {
-                for (int j = i; j > mid; j--)
-                    a[j] = a[j - 1];
-                a[mid] = key;
-            }
-            if (key > a[mid])
+            if (key >= a[mid])
                 l = mid + 1;
-            if (key < a[mid - 1])
+            else
                 r = mid - 1;
         }
-        a[i + 1] = key;
+        for (int j = i; j > l; j--)
+            a[j] = a[j - 1];
+        a[l] = key;
     }
 }
 void printArray(int arr[], int n)
@@ -141,7 +137,7 @@ void printArray(int arr[], int n)
 
 int main()
 {
-    int arr[] = {6, 3, 8, 4, 7, 2, 5};
+    int arr[] = {6, 3, 8, 4, 1, 7, 2, 5, 9, 0};
     int n = sizeof(arr) / sizeof(arr[0]);
 
     // insertionSort(arr, n);
