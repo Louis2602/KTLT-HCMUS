@@ -47,7 +47,7 @@ void insertionSort_sentinel_2(int arr[], int n)
     // or we could say, our sentinel will be negative infinity
     // arr[-1] = -numeric_limits<int>::infinity();
     int temp = arr[0];
-    arr[0] = -100;
+    arr[0] = -1e7;
     for (int i = 1; i < n; i++)
     {
         int key = arr[i];
