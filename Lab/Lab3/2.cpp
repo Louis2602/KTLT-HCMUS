@@ -2,8 +2,9 @@
 using namespace std;
 int *sum(int *a, int *b)
 {
-    static int ans = (*a) + (*b);
-    return &ans;
+    int s = *a + *b;
+    int *ans = &s;
+    return ans;
 }
 int main()
 {
