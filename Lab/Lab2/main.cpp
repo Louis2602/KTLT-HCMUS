@@ -12,7 +12,7 @@ struct Players
     string country;
     string club;
 };
-void ReadFile(char *input, Players players[])
+int ReadFile(char *input, Players players[])
 {
     ifstream in;
     in.open(input);
@@ -23,18 +23,19 @@ void ReadFile(char *input, Players players[])
         getline(in, players[i].role, '/');
         getline(in, players[i].name, '/');
         in >> players[i].year;
-        in.get(); // skip / after yeas
+        in.get(); // skip / after year
         getline(in, players[i].country, '/');
         getline(in, players[i].club, '\n');
         i++;
     }
     in.close();
+    return i;
 }
 void findPlayersBornIn1994(char *input, Players players[])
 {
-    ReadFile(input, players);
+    int n = ReadFile(input, players);
     cout << "All players were born in 1994:\n";
-    for (int i = 0; i < 81; i++)
+    for (int i = 0; i < n; i++)
     {
         if (players[i].year == 1994)
             cout << players[i].name << '\n';
@@ -43,9 +44,9 @@ void findPlayersBornIn1994(char *input, Players players[])
 
 void findManchesterUnitedPlayers(char *input, Players players[])
 {
-    ReadFile(input, players);
+    int n = ReadFile(input, players);
     cout << "All players that played for Manchester United:\n";
-    for (int i = 0; i < 81; i++)
+    for (int i = 0; i < n; i++)
     {
         if (players[i].club == "Manchester United")
             cout << players[i].name << '\n';
@@ -53,9 +54,9 @@ void findManchesterUnitedPlayers(char *input, Players players[])
 }
 void findAllFW_ManchesterCity(char *input, Players players[])
 {
-    ReadFile(input, players);
+    int n = ReadFile(input, players);
     cout << "All FW players that played for Manchester City:\n";
-    for (int i = 0; i < 81; i++)
+    for (int i = 0; i < n; i++)
     {
         if (players[i].role == "FW" && players[i].club == "Manchester City")
             cout << players[i].name << '\n';
@@ -69,9 +70,9 @@ void swap(string &a, string &b)
 }
 void sortPlayers(char *input, Players players[])
 {
-    ReadFile(input, players);
+    int n = ReadFile(input, players);
     string lastName[81];
-    for (int i = 0; i < 81; i++)
+    for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < players[i].name.size(); j++)
         {
@@ -97,7 +98,7 @@ void sortPlayers(char *input, Players players[])
 }
 int main()
 {
-    Players players[81];
+    Players players[100];
     char input[] = "Players.txt";
     findPlayersBornIn1994(input, players);
     // findManchesterUnitedPlayers(input, players);
