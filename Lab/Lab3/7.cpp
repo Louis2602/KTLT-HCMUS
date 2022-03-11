@@ -35,5 +35,6 @@ int main()
     int *res = genEvenSubarray(a, n, evens);
     for (int i = 0; i < *cnt; i++)
         cout << *(res + i) << " ";
+    delete[] evens;
     return 0;
 }
