@@ -1,4 +1,6 @@
 #include <iostream>
+#include <cstring>
+
 using namespace std;
 
 int fibonacci(int n)
@@ -7,12 +9,17 @@ int fibonacci(int n)
         return n;
     return fibonacci(n - 1) + fibonacci(n - 2);
 }
-int improvedFibonacci(int n, int *cache)
+int memoizationFib(int n, int *cache)
 {
-    if (cache[n])
+    if (n <= 1)
+        return n;
+    if (cache[n] != 0)
         return cache[n];
-    cache[n] = improvedFibonacci(n - 1, cache) + improvedFibonacci(n - 2, cache);
-    return cache[n];
+    else
+    {
+        cache[n] = memoizationFib(n - 1, cache) + memoizationFib(n - 2, cache);
+        return cache[n];
+    }
 }
 int main()
 {
@@ -27,7 +34,8 @@ int main()
     //     f1 = f;
     // }
     // cout << f;
-    int cache[3] = {0, 1, 1};
-    cout << "Fibonacci at " << n << "th = " << improvedFibonacci(n, cache);
+    int cache[1000];
+    memset(cache, 0, sizeof(cache));
+    cout << "Fibonacci at " << n << "th = " << memoizationFib(n, cache);
     return 0;
 }
