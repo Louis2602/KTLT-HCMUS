@@ -18,6 +18,8 @@ void swapArrays(int *a, int *b, int &na, int &nb)
     cout << "Array A: ";
     for (int i = 0; i < na_new; i++)
         cout << *(a + i) << " ";
+    nb = nb_new;
+    na = na_new;
 }
 
 int main()
