@@ -1,24 +1,18 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
 int main()
 {
-    char s[100];
-    int n, i = 0, cnt = 0;
-    cin >> n;
-    while (n)
-    {
-        s[i++] = n % 10 + '0';
-        cnt++;
-        n /= 10;
-        if (cnt % 3 == 0)
-            s[i++] = ',';
-    }
-    if (s[i - 1] == ',')
-        i--;
-    s[i] = '\0';
-    for (int k = 0; k < i / 2; k++)
-        swap(s[k], s[i - k - 1]);
-    cout << s;
+    string s;
+    string m, d, y;
+    getline(cin, m, '/');
+    getline(cin, d, '/');
+    getline(cin, y, '\n');
+    int month = atoi(m.c_str());
+    int day = atoi(d.c_str());
+    int year = atoi(y.c_str());
+    string months[12] = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
+    cout << months[month - 1] << " " << day << ", " << year << '\n';
     return 0;
 }
