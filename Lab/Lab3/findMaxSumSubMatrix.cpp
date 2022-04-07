@@ -27,20 +27,22 @@ void print(int **a, int width, int length)
 void findMaxSumSubmatrix(int **a, int width, int length, int width_, int length_)
 {
     int maxSum = 0, currSum = 0;
-    for (int i = 0; i < width; i++)
+    for (int i = 0; i < width - width_ + 1; i++)
     {
-        for (int j = 0; j < length; j++)
+        for (int j = 0; j < length - length_ + 1; j++)
         {
             currSum = 0;
-            for (int m = i; m < width_; m++)
+            for (int m = i; m < i + width_; m++)
             {
-                for (int n = j; n < length_; n++)
+                for (int n = j; n < j + length_; n++)
                 {
                     currSum += a[m][n];
                 }
             }
+            cout << currSum << " ";
             maxSum = max(maxSum, currSum);
         }
+        cout << '\n';
     }
     cout << "Max sum submatrix is: " << maxSum;
 }
