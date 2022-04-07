@@ -23,17 +23,12 @@ void generateCMatrix(int A[][3], int B[][6], int na, int nb, int C[][10])
         {
             currSum = 0;
             for (int m = i; m < i + na; m++)
-            {
                 for (int n = j; n < j + na; n++)
-                {
                     currSum += B[m][n];
-                }
-            }
             tmp[i][j] = currSum;
             minSum = min(minSum, currSum);
         }
     }
-    // cout << minSum << endl;
     for (int i = 0; i < nb - na + 1; i++)
         for (int j = 0; j < nb - na + 1; j++)
             if (minSum == tmp[i][j])
@@ -41,7 +36,6 @@ void generateCMatrix(int A[][3], int B[][6], int na, int nb, int C[][10])
                 x = i;
                 y = j;
             }
-    // cout << x << " " << y << endl;
     int k = 0, l = 0;
     for (int i = 0; i < nb; i++)
     {
