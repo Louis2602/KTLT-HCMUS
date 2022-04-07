@@ -1,0 +1,33 @@
+1. Cho 2 ma trận vuông A và B có kích thước lần lượt là na và nb (na < nb). 
+a. Hãy viết hàm in ra ma trận vuông
+void printSMatrix(int** A, int n)
+
+b. Hãy viết hàm sinh ra ma trận C bằng cách thay thế một phần ma trận B bởi ma trận A, sao cho ma trận C tạo được có tổng lớn nhất.
+int** generateCmatrix(int** A, int** B, int na, int nb, ...)
+
+VD:
+-> Input
+A - 5 5 5 
+    5 5 5
+    5 5 5
+
+B - 1 2 3 4 5 6
+    1 2 3 4 5 6
+    1 2 3 4 5 6
+    1 1 1 3 3 3
+    1 1 1 3 3 3
+    1 1 1 3 3 3
+
+-> Output
+C - 1 2 3 4 5 6
+    1 2 3 4 5 6
+    1 2 3 4 5 6
+    5 5 5 3 3 3
+    5 5 5 3 3 3
+    5 5 5 3 3 3
+
+2.  Cho số nguyên dương n. Viết hàm đệ quy sinh ra số nguyên dương n' sao cho n' chỉ chứa các số chẵn từ n, theo thứ tự. Nếu n chứa toàn phần tử lẻ, hãy trả về 0. 
+int findEvenn(int n, ...)
+VD:
+n = 123456 -> n' = 246
+n = 111100 -> n' = 0
