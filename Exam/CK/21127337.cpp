@@ -143,13 +143,13 @@ int main()
     // printCities(p, head, tail);
     // removeCity(p, 1200000);
     // printCities(p, head, tail);
-    // cout << count1(6, 2, 6);
-    int A[4][4] = {
-        {1, 2, 3, 4},
-        {1, 2, 3, 4},
-        {1, 1, 5, 5},
-        {1, 1, 5, 5},
-    };
-    createSumMatrix(A, 2);
+    cout << count1(6, 2, 6);
+    // int A[4][4] = {
+    //     {1, 2, 3, 4},
+    //     {1, 2, 3, 4},
+    //     {1, 1, 5, 5},
+    //     {1, 1, 5, 5},
+    // };
+    // createSumMatrix(A, 2);
     return 0;
 }
