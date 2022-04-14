@@ -109,19 +109,19 @@ int **createSumMatrix(int A[][4], int n)
     for (int i = 0; i < 2; i++)
         B[i] = new int[2];
     int r = 0, c = 0;
-    for (int i = 0; i < 2 * n; i += n)
+    for (int i = 0; i < n; i++)
     {
-        for (int j = 0; j < 2 * n; j += n)
+        for (int j = 0; j < n; j++)
         {
             curr_sum = 0;
-            for (int m = i; m < i + n; m++)
+            for (int m = i; m < 2 * n; m += n)
             {
-                for (int k = j; k < j + n; k++)
+                for (int k = j; k <= j + n; k += n)
                 {
                     curr_sum += A[m][k];
                 }
             }
-            B[i / n][j / n] = curr_sum;
+            B[i][j] = curr_sum;
         }
     }
     for (int i = 0; i < 2; i++)
@@ -139,17 +139,17 @@ int main()
     Node *head = NULL;
     Node *tail = NULL;
     Node *p;
-    p = readFile(head, tail, city);
-    printCities(p, head, tail);
-    removeCity(p, 1200000);
-    printCities(p, head, tail);
+    // p = readFile(head, tail, city);
+    // printCities(p, head, tail);
+    // removeCity(p, 1200000);
+    // printCities(p, head, tail);
     // cout << count1(6, 2, 6);
-    // int A[4][4] = {
-    //     {1, 2, 3, 4},
-    //     {1, 2, 3, 4},
-    //     {1, 1, 5, 5},
-    //     {1, 1, 5, 5},
-    // };
-    // createSumMatrix(A, 2);
+    int A[4][4] = {
+        {1, 2, 3, 4},
+        {1, 2, 3, 4},
+        {1, 1, 5, 5},
+        {1, 1, 5, 5},
+    };
+    createSumMatrix(A, 2);
     return 0;
 }

@@ -1,0 +1,9 @@
+Stack / Queue -> Imagine as a linkedlist
+
+Stack: push/pop
+=> To add: we use addHead,
+=> To remove: we use removeHead
+
+Queue: enqueue/dequeue
+=> To add: we use addTail,
+=> To remove: we use removeHead
