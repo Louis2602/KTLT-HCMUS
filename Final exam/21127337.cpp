@@ -52,12 +52,10 @@ int count2(int n, int m)
 {
     if (n == 1)
         return 1;
-    if (n < m)
-        return 0;
     int cnt = 0;
     for (int i = m; i >= 2; i--)
     {
-        if (m % i == 0)
+        if (n % i == 0)
             cnt += count2(n / i, i);
     }
     return cnt;
@@ -148,6 +146,6 @@ void removePeople(People P, int X)
 }
 int main()
 {
-    cout << count2(100, 10);
+    cout << count2(100, 26);
     return 0;
 }
