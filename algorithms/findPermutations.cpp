@@ -29,10 +29,11 @@ int main()
     cout << "Enter the size of array: ";
     cin >> n;
     int i;
-    int arr[n];
+    int *arr = new int[n];
     for (i = 0; i < n; i++)
         cin >> arr[i];
     cout << "All the permutations:\n";
     permutation(arr, 0, n - 1);
+    delete[] arr;
     return 0;
 }

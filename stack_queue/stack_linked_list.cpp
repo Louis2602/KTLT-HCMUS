@@ -1,5 +1,4 @@
 #include <iostream>
-#include <ctime>
 using namespace std;
 
 struct Node
@@ -54,7 +53,6 @@ bool isEmpty(Node *head)
 }
 int main()
 {
-    srand(time(0));
     Node *head = nullptr;
     int n;
     cout << "Nhap n = ";
