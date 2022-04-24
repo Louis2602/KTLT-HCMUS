@@ -2,7 +2,7 @@
 #include <cstring>
 using namespace std;
 
-char *replaceStr(char *before, char *sub, char *rep);
+char *replaceStr(char *src, char *sub, char *rep);
 
 int main()
 {
@@ -16,23 +16,23 @@ int main()
     return 0;
 }
 
-char *replaceStr(char *before, char *sub, char *rep)
+char *replaceStr(char *src, char *sub, char *rep)
 {
     int old_length = strlen(sub);
     int new_length = strlen(rep);
-    int before_length = strlen(before);
+    int src_length = strlen(src);
 
     char *after;
     if (old_length == new_length)
-        after = new char[before_length + 1];
+        after = new char[src_length + 1];
     else
     {
         int occurrences = 0;
 
         int i = 0;
-        while (i < before_length)
+        while (i < src_length)
         {
-            if (strstr(&before[i], sub) == &before[i])
+            if (strstr(&src[i], sub) == &src[i])
             {
                 occurrences++;
                 i += old_length;
@@ -42,16 +42,16 @@ char *replaceStr(char *before, char *sub, char *rep)
         }
         int sub_diff = new_length - old_length;
 
-        int after_length = before_length;
+        int after_length = src_length;
 
         after_length += occurrences * sub_diff;
         after = new char[after_length + 1];
     }
     int i = 0;
     int j = 0;
-    while (i < strlen(before))
+    while (i < strlen(src))
     {
-        if (strstr(&before[i], sub) == &before[i])
+        if (strstr(&src[i], sub) == &src[i])
         {
             strcpy(&after[j], rep);
             i += old_length;
@@ -59,7 +59,7 @@ char *replaceStr(char *before, char *sub, char *rep)
         }
         else
         {
-            after[j] = before[i];
+            after[j] = src[i];
             i++;
             j++;
         }
