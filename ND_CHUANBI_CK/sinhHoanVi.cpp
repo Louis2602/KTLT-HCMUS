@@ -23,10 +23,10 @@ void k_permutation(int A[], int n, int k, bool check[], int ans[], int id)
 
 int main()
 {
-    int a[3] = {4, 5, 1};
-    int ans[2] = {};
-    bool check[3] = {};
-    int n = 3, k = 2;
+    int a[6] = {1, 2, 3, 4, 5, 6};
+    int ans[7] = {};
+    bool check[10] = {};
+    int n = 6, k = 3;
 
     k_permutation(a, n, k, check, ans, 0);
     return 0;
