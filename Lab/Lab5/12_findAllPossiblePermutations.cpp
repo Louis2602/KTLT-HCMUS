@@ -40,7 +40,7 @@ int main()
     string s, ans;
     cin >> s;
     cout << "All the permutations:\n";
-    // permutation_2(s, ans);
-    permutation_1(s, 0, s.size() - 1);
+    permutation_2(s, ans);
+    // permutation_1(s, 0, s.size() - 1);
     return 0;
 }
