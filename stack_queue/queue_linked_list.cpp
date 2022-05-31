@@ -26,7 +26,6 @@ void enqueue(Node *&head, int data)
     while (t->next != NULL)
         t = t->next;
     t->next = p;
-    p->next = NULL;
 }
 
 void dequeue(Node *&head)
