@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+// Thuật toán sắp xếp nổi bọt
+
 int main()
 {
     int a[] = {11, 8, 5, 2, 7, 1};

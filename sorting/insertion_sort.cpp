@@ -3,6 +3,8 @@
 #include <limits>
 using namespace std;
 
+// Thuật toán sắp xếp chèn
+
 void insertionSort(int arr[], int n)
 {
     int j;

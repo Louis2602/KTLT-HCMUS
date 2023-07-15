@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+// Thuật toán sắp xếp lựa chọn
+
 int main()
 {
     int a[] = {3, 2, 5, 1, 6, 4, 9, 7, 11};
@@ -15,7 +17,8 @@ int main()
         for (int j = i + 1; j < n; ++j)
             if (a[j] < a[minIndex])
                 minIndex = j;
-        swap(a[minIndex], a[i]);
+        if (minIndex != i)
+            swap(a[minIndex], a[i]);
     }
 
     // output

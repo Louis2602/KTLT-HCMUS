@@ -2,6 +2,8 @@
 #include <iostream>
 using namespace std;
 
+// Thuật toán sắp xếp đổi chỗ trực tiếp
+
 int main()
 {
     int a[] = {5, 3, 6, 1, 7, 2, 9, 10};
