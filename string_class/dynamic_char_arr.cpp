@@ -8,18 +8,21 @@ int main()
     cout << "How many words will you enter? ";
     cin >> row;
 
+    // Initialize
     char **strArr = 0;
     strArr = new char *[row];
     int i;
     for (i = 0; i < row; i++)
         strArr[i] = new char[column];
 
+    // Input
     for (i = 0; i < row; i++)
     {
         cout << "Enter word " << i + 1 << ": ";
         cin >> strArr[i];
     }
 
+    // Sort
     for (int i = 0; i < row - 1; i++)
     {
         for (int j = i + 1; j < row; j++)
@@ -34,7 +37,10 @@ int main()
         }
     }
 
-    cout << strArr[0];
+    for (int i = 0; i < row; i++)
+    {
+        cout << strArr[i] << endl;
+    }
 
     for (i = 0; i < row; i++)
         delete[] strArr[i];

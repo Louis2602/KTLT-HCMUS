@@ -4,7 +4,7 @@
 using namespace std;
 int main()
 {
-    char a[5][20] = {"Phan Van Duc", "Tran Tien Duc", "Nguyen Ngoc Hai", "Do Mai Huy", "Lam Thieu Huy"};
+    char a[5][20] = {"Phan Van Duc", "Tran Tien Duc", "Do Mai Huy", "Lam Thieu Huy", "Nguyen Ngoc Hai"};
     int n = sizeof(a) / sizeof(a[0]);
     char t[5][20];
     char *p, *q;

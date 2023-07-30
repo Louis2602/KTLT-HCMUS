@@ -9,10 +9,11 @@ int search(int arr[], int n, int x)
             return i;
     return 0;
 }
+
 int main()
 {
     int arr[] = {2, 3, 4, 10, 40};
-    int x = 10;
+    int x = 20;
     int n = sizeof(arr) / sizeof(arr[0]);
 
     int result = search(arr, n, x);

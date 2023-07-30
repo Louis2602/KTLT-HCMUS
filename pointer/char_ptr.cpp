@@ -3,7 +3,7 @@ using namespace std;
 
 int main()
 {
-    char str[] = "A string.";
+    char *str = "A string.";
     char *pc = str;
 
     cout << str[0] << ' ' << *pc << ' ' << pc[3] << "\n";

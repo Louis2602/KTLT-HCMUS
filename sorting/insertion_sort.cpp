@@ -140,8 +140,8 @@ int main()
     int arr[] = {6, 3, 8, 4, 1, 7, 2, 1, 9, 3};
     int n = sizeof(arr) / sizeof(arr[0]);
 
-    // insertionSort(arr, n);
-    insertionSort_sentinel(arr, n);
+    insertionSort(arr, n);
+    // insertionSort_sentinel(arr, n);
     // insertionSort_binary_search(arr, n);
     // binaryInsertionSort_2(arr, n);
     // insertionSort_sentinel_2(arr, n);

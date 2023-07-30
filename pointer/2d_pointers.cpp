@@ -9,12 +9,12 @@ void input(int *a)
     for (int i = 0; i < 9; i++)
         p[i] = rand() % 10;
 }
-void output(int *a)
+void output(int *ptr)
 {
     for (int i = 0; i < 3; i++)
     {
         for (int j = 0; j < 3; j++)
-            cout << *((int *)a + 3 * i + j) << " ";
+            cout << *((int *)ptr + 3 * i + j) << " ";
         cout << '\n';
     }
 }
