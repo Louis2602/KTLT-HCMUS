@@ -18,13 +18,18 @@ Node *Insert(Node *&head, int data)
 
 void Print(Node *head)
 {
-    cout << "The linked list is: ";
-    while (head != NULL)
-    {
-        cout << head->data << "-> ";
-        head = head->next;
-    }
-    cout << endl;
+    Node *p = head;
+    // cout << "The linked list is: ";
+    // while (p != NULL)
+    // {
+    //     cout << p->data << "-> ";
+    //     p = p->next;
+    // }
+    if (p == NULL)
+        return;
+    Print(p->next);
+    cout << p->data << "-> ";
+    delete p;
 }
 
 int main()
@@ -36,5 +41,7 @@ int main()
     Insert(head, 2);
     Insert(head, 9);
     Print(head);
+
+    delete head;
     return 0;
 }

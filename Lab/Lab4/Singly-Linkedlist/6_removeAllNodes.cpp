@@ -26,6 +26,7 @@ void removeAll(Node *&pHead)
         pHead = pHead->next;
         delete tmp;
     }
+    delete pHead;
     cout << "All nodes are deleted successfully.";
 }
 void print(Node *pHead)

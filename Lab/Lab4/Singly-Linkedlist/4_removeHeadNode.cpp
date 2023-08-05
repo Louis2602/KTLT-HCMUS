@@ -12,6 +12,7 @@ void removeHead(Node *&pHead)
         return;
     Node *tmp = pHead;
     pHead = pHead->next;
+    tmp->next = nullptr;
 
     delete tmp;
 }

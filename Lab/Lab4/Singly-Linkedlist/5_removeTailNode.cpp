@@ -22,6 +22,7 @@ void removeTail(Node *&pHead)
         second_last = second_last->next;
     delete second_last->next;
     second_last->next = NULL;
+    delete second_last;
 }
 void addHead(Node *&pHead, int data)
 {
