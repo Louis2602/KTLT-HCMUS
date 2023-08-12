@@ -47,9 +47,7 @@ void print(Node *head)
 }
 bool isEmpty(Node *head)
 {
-    if (head == nullptr)
-        return true;
-    return false;
+    return head == nullptr;
 }
 int main()
 {

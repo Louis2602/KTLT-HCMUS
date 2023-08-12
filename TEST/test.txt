@@ -1,0 +1,59 @@
+1. Cho ma trận A có kích thước p * q. (m x n) (row x col)
+a. Viết hàm in ma trận A ra màn hình
+void printMatrixA(int** A, int p, int q)
+
+b. Cho số tự nhiên n (n < p và q). Hãy viết hàm sinh ra ma trận vuông C kích thước n * 2n bằng cách ghép theo chiều ngang ma trận con (n * n) 
+của A có tổng lớn nhất và ma trận con (n * n) của A có tổng nhỏ nhất
+int** generateCmatrix(int** A, int p, int q, int n, ...)
+
+VD:
+-> Input
+A - 1 2 3 4 5 6
+    1 2 3 4 5 6
+    1 2 3 4 5 6
+    1 1 1 3 3 3
+    1 1 1 3 3 3
+    1 1 1 3 3 3
+p = q = 6
+-> Output
+n = 3
+C: 3x6
+mt1: 3x3: MIN
+mt2: 3x3: MAX
+C - 1 1 1 4 5 6
+    1 1 1 4 5 6
+    1 1 1 4 5 6
+
+2.  Cho số nguyên dương n. Viết hàm đệ quy tính tổng tất cả các ước nguyên tố của n
+int sumofPrimeDivisor(int n, ...)
+VD:
+n = 12 => sum = 2 + 3 = 5
+U(12) = {1, 2, 3, 4, 6, 12}
+=> 2, 3
+n = 93 => sum = 3 + 31 = 34 
+
+* Bài toán: Hệ thống bán vé số duy nhất
+Bạn là một nhà quản lý trong một công ty vé số. Công ty của bạn cần xây dựng một hệ thống để bán vé số cho khách hàng. Mỗi lần khách hàng mua vé số, 
+hệ thống cần sinh ra một dãy gồm 6 ký tự số sao cho không có hai dãy số nào trùng nhau. (remove duplicate)
+
+* Yêu cầu:
+1. Mỗi dãy số vé số gồm 6 ký tự số, mỗi ký tự thuộc từ 0 đến 9.
+2. Không có hai dãy số vé số nào trùng nhau. Điều này đảm bảo tính duy nhất cho từng vé số được bán.
+3. Số lượng vé số bán trong một ngày không vượt quá 1,000,000 (10^6) tờ.
+
+Ví dụ:
+n = 10
+31 13 35 28 2 26 
+9 37 17 14 45 38
+28 19 40 36 42 13
+36 29 46 13 18 8
+4 49 12 33 21 1
+23 3 6 35 45 49
+30 26 19 48 14 25
+43 16 44 8 46 1
+45 30 26 49 22 6
+11 33 34 13 38 4
+
+* Nhiệm vụ của bạn:
+Thiết kế một hệ thống quản lý bán vé số thỏa mãn các yêu cầu trên. Khi mỗi khách hàng đến mua vé, hệ thống cần sinh ra một dãy số vé số mới và đảm bảo rằng dãy số này chưa được sử dụng trước đó. 
+Trong trường hợp hết vé số để bán, hệ thống cần thông báo cho người mua biết.

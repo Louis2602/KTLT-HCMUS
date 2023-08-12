@@ -11,26 +11,26 @@ Node *createNode(int data)
 {
     Node *p = new Node;
     p->data = data;
-    p->next = NULL;
+    p->next = nullptr;
     return p;
 }
 void enqueue(Node *&head, int data)
 {
     Node *p = createNode(data);
-    if (head == NULL)
+    if (head == nullptr)
     {
         head = p;
         return;
     }
     Node *t = head;
-    while (t->next != NULL)
+    while (t->next != nullptr)
         t = t->next;
     t->next = p;
 }
 
 void dequeue(Node *&head)
 {
-    if (head == NULL)
+    if (head == nullptr)
         return;
     Node *p = head;
     head = p->next;
@@ -49,13 +49,11 @@ void print(Node *head)
 }
 bool isEmpty(Node *head)
 {
-    if (head == NULL)
-        return true;
-    return false;
+    return head == nullptr;
 }
 int main()
 {
-    Node *head = NULL;
+    Node *head = nullptr;
     int n;
     cout << "Nhap n = ";
     cin >> n;

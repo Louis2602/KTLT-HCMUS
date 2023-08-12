@@ -1,0 +1,12 @@
+* Bài toán: Hệ thống bán vé số duy nhất
+Bạn là một nhà quản lý trong một công ty vé số. Công ty của bạn cần xây dựng một hệ thống để bán vé số cho khách hàng. Mỗi lần khách hàng mua vé số, 
+hệ thống cần sinh ra một dãy gồm 6 ký tự số sao cho không có hai dãy số nào trùng nhau.
+
+* Yêu cầu:
+1. Mỗi dãy số vé số gồm 6 ký tự số, mỗi ký tự thuộc từ 0 đến 9.
+2. Không có hai dãy số vé số nào trùng nhau. Điều này đảm bảo tính duy nhất cho từng vé số được bán.
+3. Số lượng vé số bán trong một ngày không vượt quá 1,000,000 (10^6) tờ.
+
+* Nhiệm vụ của bạn:
+Thiết kế một hệ thống quản lý bán vé số thỏa mãn các yêu cầu trên. Khi mỗi khách hàng đến mua vé, hệ thống cần sinh ra một dãy số vé số mới và đảm bảo rằng dãy số này chưa được sử dụng trước đó. 
+Trong trường hợp hết vé số để bán, hệ thống cần thông báo cho người mua biết.
